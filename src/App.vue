@@ -28,7 +28,7 @@ export default {
   },
   mounted() {
     const vm = this
-    fetch('/data/airports.json')
+    fetch(process.env.BASE_URL + 'data/airports.json')
       .then(res => res.json())
       .then(airportData => {
         vm.airports = vm.processAirports(airportData)
